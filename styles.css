@@ -304,37 +304,19 @@ h1{
   filter:drop-shadow(0 30px 36px rgba(36,50,26,.25));
 }
 
-.envelope-flap{
-  position:absolute;
-  left:24%;
-  right:18%;
-  top:26%;
-  height:36%;
-  z-index:8;
-  transform-origin:top center;
-  transform-style:preserve-3d;
-  clip-path:polygon(2% 0,98% 0,50% 100%);
-  background:
-    linear-gradient(110deg,rgba(255,255,255,.12),transparent 28%),
-    linear-gradient(162deg,#708258,#34492a 58%,#26391f);
-  border-top:1px solid rgba(227,205,143,.66);
-  box-shadow:0 16px 26px rgba(23,34,16,.19), inset 0 1px 0 rgba(255,255,255,.16);
-  animation:flapOpen 1.25s cubic-bezier(.18,.84,.2,1) forwards .48s;
-}
-.envelope-flap::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(240,216,154,.38),transparent 10%,transparent 88%,rgba(0,0,0,.12));
-  opacity:.85;
-}
+/*
+  La solapa animada se desactiva a pedido: el sobre se mantiene como imagen estática
+  y la foto aparece directamente desde la composición, sin apertura visual del sobre.
+*/
+.envelope-flap{display:none}
+.envelope-flap::after{display:none}
 
 .photo-polaroid{
   position:absolute;
   width:clamp(260px,32vw,395px);
   right:2.5%;
   bottom:38%;
-  z-index:7;
+  z-index:9;
   padding:10px 10px 30px;
   border-radius:6px;
   background:linear-gradient(180deg,#fff,#fff8ed);
@@ -345,7 +327,7 @@ h1{
   transform-origin:center bottom;
   opacity:0;
   clip-path:inset(54% 0 0 0 round 6px);
-  animation:photoReveal 1.22s cubic-bezier(.16,.92,.24,1) forwards 1.05s;
+  animation:photoReveal 1.18s cubic-bezier(.16,.92,.24,1) forwards .58s;
 }
 .photo-polaroid::after{
   content:"";
@@ -375,7 +357,7 @@ h1{
   transform:rotate(-3deg);
   filter:drop-shadow(0 16px 18px rgba(37,52,24,.18));
   opacity:0;
-  animation:flowersIn .9s ease-out forwards 1.52s;
+  animation:flowersIn .9s ease-out forwards .95s;
 }
 
 .wax-seal{
@@ -398,7 +380,7 @@ h1{
   line-height:1;
   opacity:0;
   transform:translate(-50%,12px) scale(.86);
-  animation:sealIn .62s cubic-bezier(.23,1.25,.32,1) forwards 1.72s;
+  animation:sealIn .62s cubic-bezier(.23,1.25,.32,1) forwards 1.12s;
 }
 .wax-seal span{transform:translateY(-1px)}
 
@@ -418,7 +400,7 @@ h1{
   letter-spacing:.28em;
   text-transform:uppercase;
   opacity:0;
-  animation:cueIn .8s ease-out forwards 2.05s;
+  animation:cueIn .8s ease-out forwards 1.42s;
 }
 .scroll-cue svg{
   width:22px;
@@ -729,11 +711,6 @@ b{color:var(--olive-dark);font-weight:700}
 
 @keyframes headingIn{to{opacity:1;transform:none}}
 @keyframes sceneIn{to{opacity:1;transform:none}}
-@keyframes flapOpen{
-  0%{transform:rotateX(0deg);opacity:.98;z-index:10}
-  58%{opacity:.96;z-index:10}
-  100%{transform:rotateX(-168deg) translateY(-3px);opacity:0;z-index:2}
-}
 @keyframes photoReveal{
   0%{opacity:0;clip-path:inset(58% 0 0 0 round 6px);transform:translateY(36%) rotate(1.2deg) scale(.88)}
   26%{opacity:1}
@@ -791,12 +768,6 @@ b{color:var(--olive-dark);font-weight:700}
     left:-6%;
     right:-6%;
     bottom:9%;
-  }
-  .envelope-flap{
-    left:27%;
-    right:22%;
-    top:27%;
-    height:28%;
   }
   .photo-polaroid{
     width:58%;
