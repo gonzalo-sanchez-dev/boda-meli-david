@@ -433,6 +433,14 @@ h1{
   margin:0 auto;
 }
 .section-inner--narrow{width:min(860px,100%)}
+.section > .section-inner > .eyebrow,
+.section > .section-inner > .ornament,
+.section > .section-inner > h2,
+.section > .section-inner > .lead{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 h2{
   margin:12px auto 16px;
@@ -577,7 +585,23 @@ b{color:var(--olive-dark);font-weight:700}
   margin:0 auto 16px;
   color:var(--olive);
 }
-.icon svg{width:100%;height:100%;fill:currentColor}
+.icon svg{
+  width:100%;
+  height:100%;
+  fill:currentColor;
+}
+
+.icon-rings{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:3.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.icon-rings path{
+  fill:none;
+}
 .time{
   margin:0 auto 12px;
   color:var(--ink-soft);
