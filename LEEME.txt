@@ -1,0 +1,24 @@
+INVITACIÓN DIGITAL MELI & DAVID - VERSIÓN PREMIUM
+
+Contenido:
+- index.html
+- styles.css
+- script.js
+- assets/
+
+Cambios realizados:
+- Hero rehecho como escena visual completa, sin tarjeta rígida.
+- Sobre principal reemplazado por el PNG final con textura y profundidad.
+- Animación inicial corregida: apertura de solapa, salida de foto tipo polaroid, aparición de flores y sello.
+- Foto principal recortada en assets/pareja-hero.jpg para funcionar mejor dentro de la polaroid.
+- Lirios finales integrados en la base del sobre y en tarjetas decorativas.
+- Fondo crema/botánico final aplicado como textura general.
+- Tipografías premium incorporadas desde Google Fonts.
+- Cuenta regresiva, programa, ubicación, RSVP y footer reorganizados y mejorados visualmente.
+- Responsive mobile/tablet corregido sin scroll horizontal.
+- JavaScript ordenado para música, countdown, petals e IntersectionObserver.
+- Incluye soporte para prefers-reduced-motion.
+
+Publicación en GitHub Pages:
+Subir el contenido de esta carpeta a la rama o carpeta configurada para Pages.
+No subir la carpeta contenedora; subir directamente index.html, styles.css, script.js y assets/.
